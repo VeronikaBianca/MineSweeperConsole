@@ -92,7 +92,7 @@ namespace MineSweeper
         /// <param name="x">Cordinate for x</param>
         /// <param name="y">Cordinate for y</param>
         /// <returns>true if cell is on the playing field</returns>
-        public bool CheckIfCellIsOutsideField(int x, int y)
+        private bool CheckIfCellIsOutsideField(int x, int y)
         {
             return x < 0 || x >= PlayingField.GetLength(0) || y >= PlayingField.GetLength(1) || y < 0;
         }
@@ -104,7 +104,7 @@ namespace MineSweeper
         /// <param name="x">Cordinate for x, index</param>
         /// <param name="y">Cordinate for y, index</param>
         /// <returns>false if the cell is outside the playing field,  true if the field is a bomb</returns>
-       public bool CheckBombIncrement(int x, int y)
+       private bool CheckBombIncrement(int x, int y)
         {
             return !CheckIfCellIsOutsideField(x, y) && FieldIsBomb(x, y);
         }
@@ -114,7 +114,7 @@ namespace MineSweeper
         /// </summary>
         /// <param name="x">Cordinate for x</param>
         /// <param name="y">Cordinate for y</param>
-        public void CalculateSurroundingBombValueForField(int x, int y)
+        private void CalculateSurroundingBombValueForField(int x, int y)
         {
 
             for (int yCoordinate = y - 1; yCoordinate <= y + 1; yCoordinate++)
